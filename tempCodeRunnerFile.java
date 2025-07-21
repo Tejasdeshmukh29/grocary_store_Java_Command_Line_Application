@@ -105,9 +105,8 @@ public class GroceryShopping {
         }
 
         public void printavailableitem(List<Product> prodlist) {
-            int count =1;
         for (Product product : prodlist) {
-            System.out.println(count+") " + product.get_name_prod() + " price = " + product.get_price() + " Quantity = "
+            System.out.println(product.get_name_prod() + " price = " + product.get_price() + " Quantity = "
                     + product.get_Quantity());
         }
         }
@@ -177,7 +176,7 @@ public class GroceryShopping {
                     break;
 
                 case 6:
-                    op.printavailableitem(prodlist);
+                    op.printavailableitem();
                     break;
 
                 default:
