@@ -1,6 +1,9 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 
 public class GroceryShopping {
 
@@ -105,16 +108,17 @@ public class GroceryShopping {
         }
 
         public void printavailableitem(List<Product> prodlist) {
-            int count =1;
-        for (Product product : prodlist) {
-            System.out.println(count+") " + product.get_name_prod() + " price = " + product.get_price() + " Quantity = "
-                    + product.get_Quantity());
-        }
+            int count = 1;
+            for (Product product : prodlist) {
+                System.out.println(
+                        count + ") " + product.get_name_prod() + ",  price = " + product.get_price() + " ,  Quantity = "
+                                + product.get_Quantity());
+            }
         }
 
     }
 
-    public static void main(String[] args) {
+    public GroceryShopping() {
 
         List<Product> prodlist = new ArrayList<>();
 
@@ -124,7 +128,10 @@ public class GroceryShopping {
         prodlist.add(new Product("pineapple", 100, 10));
         prodlist.add(new Product("chiku", 100, 10));
         System.out.println();
-        System.out.println("---------WELCOME TO OUR GROCERY STORE--------  \n       WE HAVE FOLLOWING ITEMS:");
+        LocalDateTime datetime =LocalDateTime.now();
+        DateTimeFormatter format = DateTimeFormatter.ofPattern( "dd-MM-yyyy HH:mm:ss");
+        String time = datetime.format(format);
+        System.out.println("---------WELCOME TO OUR GROCERY STORE--------       "+ " Time : "+ time + "\n       WE HAVE FOLLOWING ITEMS:");
         System.out.println();
 
 
